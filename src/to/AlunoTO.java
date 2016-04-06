@@ -21,7 +21,7 @@ public class AlunoTO {
 		//this.id = idAluno;
 		this.nome = nome;
 		this.telefone = telefone;
-		this.telefone = telefone;
+		this.endereco = endereco;
 		this.email = email;
 		this.rg = rg;
 		this.cpf = cpf;
@@ -68,7 +68,4 @@ public class AlunoTO {
 	public void setCpf(int cpf) {
 		this.cpf = cpf;
 	}
-
-	//Cliente TO - Refactor - Extratc method
-	
 }

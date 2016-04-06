@@ -104,6 +104,7 @@ public class Aluno {
 		//to.setId(idAluno);
 		to.setNome(nome);
 		to.setTelefone(telefone);
+		to.setEmail(email);
 		to.setEndereco(endereco);
 		to.setRg(rg);
 		to.setCpf(cpf);
@@ -120,6 +121,7 @@ public class Aluno {
 		nome = to.getNome();
 		telefone = to.getTelefone();
 		email = to.getEmail();
+		endereco = to.getEndereco();
 		rg= to.getRg();
 		cpf = to.getCpf();
 	}
@@ -133,6 +135,7 @@ public class Aluno {
 		to.setNome(nome);
 		to.setTelefone(telefone);
 		to.setEndereco(endereco);
+		to.setEmail(email);
 		to.setRg(rg);
 		to.setCpf(cpf);
 		dao.alterar(to);

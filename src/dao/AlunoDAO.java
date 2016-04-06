@@ -9,18 +9,16 @@ import factory.ConnectionFactory;
 import to.AlunoTO; 
 public class AlunoDAO {
 
-	// Metodos CRUD
-	// Cadastrar
 	public void cadastrar(AlunoTO to){
-		String sqlInsert = "INSERT TO Aluno(nome,telefone,endereco,email,rg,cpf) VALUES (?,?,?,?,?)";
+		String sqlInsert = "INSERT TO Aluno(nome,telefone,endereco,email,rg,cpf) VALUES (?,?,?,?,?,?)";
 		try (Connection conn = ConnectionFactory.obtemConexao();
 				PreparedStatement stm = conn.prepareStatement(sqlInsert);){
-			stm.setString(1,to.getNome());
-			stm.setString(2,to.getTelefone());
+			stm.setString(1, to.getNome());
+			stm.setString(2, to.getTelefone());
 			stm.setString(3, to.getEndereco());
-			stm.setString(3, to.getEmail());
-			stm.setString(4, to.getRg());
-			stm.setInt(5, to.getCpf());
+			stm.setString(4, to.getEmail());
+			stm.setString(5, to.getRg());
+			stm.setInt(6, to.getCpf());
 			stm.execute();
 		}catch(SQLException e){
 			e.printStackTrace();
@@ -55,20 +53,17 @@ public class AlunoDAO {
 		String sqlUpdate = "UPDATE Aluno SET nome = ?, telefone = ?, endereco = ?,email = ?, rg = ?, cpf = ? WHERE cpf ?";
 		try (Connection conn = ConnectionFactory.obtemConexao();
 				PreparedStatement stm = conn.prepareStatement(sqlUpdate);){
-			stm.setString(1,to.getNome());
-			stm.setString(2,to.getTelefone());
+			stm.setString(1, to.getNome());
+			stm.setString(2, to.getTelefone());
 			stm.setString(3, to.getEndereco());
-			stm.setString(3, to.getEmail());
-			stm.setString(4, to.getRg());
-			stm.setInt(5, to.getCpf());
+			stm.setString(4, to.getEmail());
+			stm.setString(5, to.getRg());
+			stm.setInt(6, to.getCpf());
 			stm.execute();
 		}catch(Exception e){
 			e.printStackTrace();
 		}
 	}
-
-	// Deletar
-
 	public void deletar(AlunoTO to){
 		String sqlDelete = "DELETE FROM Aluno WHERE cpf = ?";
 		try(Connection conn = ConnectionFactory.obtemConexao();
@@ -79,7 +74,4 @@ public class AlunoDAO {
 			e.printStackTrace();
 		}		
 	}
-
-
-
 }
